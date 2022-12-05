@@ -13,6 +13,7 @@ function resposta(resp){  // essa função é chamada quando o usuário escolhe 
     // um detalhe importante: este if escreve todas as perguntas, porém não analisa todas as respostas da primeira fase de perguntas
     if (cont < perguntas_iniciais.length -1){ // Primeira fase de pergunta, perguntas gerais.
         analisa(resp,perguntas_iniciais[cont][1]); // analisa a resposta da pergunta anterior
+        console.log(perguntas_iniciais[cont][1]);
         jogadores.sort(ordena_por_nome); // ordena a lista de jogadores
         exclui_jogadores(nomes_para_exclusao); // exclui os jogadores que têm caracteristas opostas ao que o usúario descreve
         cont++; // soma o contador
@@ -40,10 +41,11 @@ function resposta(resp){  // essa função é chamada quando o usuário escolhe 
         }else{ // caso contrário escrevo uma pergunta específica
             if (qt_especifica < jogadores[cont2]['perguntas'].length){
                 pergunta.innerHTML = jogadores[cont2]['perguntas'][qt_especifica][0];
-            }else{
+            }else{ // caso a pegunta específica do jogador atual tenha acabado, passo para o próximo jogador
                 cont2++;
+                console.log("Quantidade de jogadores que restam " + cont2);
                 if (cont2 < jogadores.length){
-                    qt_especifica =0;
+                    qt_especifica = 0;
                     pergunta.innerHTML = jogadores[cont2]['perguntas'][qt_especifica][0];
                 }else{
                     let body = document.querySelector('.main');
@@ -129,14 +131,15 @@ function ordena_por_nome(nome1, nome2){
 
 function analisa(resp, prop){
     for (let i =0; i < jogadores.length; i++){
+        console.log("Propriedade " + prop + "valor : " + jogadores[i][prop]);
         if (jogadores[i][prop]){
             if (resp == 0){
                 jogadores[i]['pontos'] += 10;
             }else if (resp == 1){
                 jogadores[i]['pontos'] += 5;
-            }else if (resp == 2){
-                jogadores[i]['pontos'] -= 5;
             }else if (resp == 3){
+                jogadores[i]['pontos'] -= 5;
+            }else if (resp == 2){
                 console.log(resp);
                 if (!nomes_para_exclusao.includes(jogadores[i]['nome'])){
                     nomes_para_exclusao.push(jogadores[i]['nome']);
@@ -144,17 +147,19 @@ function analisa(resp, prop){
                 
             }
         }else{
+            console.log(typeof resp + " " + resp);
             if (resp == 0){
+                console.log(jogadores[i]['nome'] + ' deve ser excluído por causa da propriedade' + jogadores[i][prop]);
                 if (!nomes_para_exclusao.includes(jogadores[i]['nome'])){
                     nomes_para_exclusao.push(jogadores[i]['nome']);
                 }
             }else if (resp == 1){
                 jogadores[i]['pontos'] -= 5;
             }else if (resp == 2){
-                jogadores[i]['pontos'] += 5;
+                jogadores[i]['pontos'] += 10;
             }else if (resp == 3){
                 console.log(resp);
-                jogadores[i]['pontos'] += 10;
+                jogadores[i]['pontos'] += 5;
             }
         }
     }

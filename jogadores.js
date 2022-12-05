@@ -15,6 +15,7 @@ var jogadores = [ {
     champions: false,
     atletico_madri: true,
     pontos: 0,
+    fluminense: false,
     perguntas: [["Já jogou no santos","santos"], ["Já ganhou a olímpiadas?","olimpiadas"]],
      },
      {
@@ -34,6 +35,7 @@ var jogadores = [ {
         champions: false,
         atletico_madri: true,
         pontos: 0,
+        fluminense: false,
         perguntas: [["Já jogou no santos","santos"]],
         }, 
         {
@@ -53,6 +55,7 @@ var jogadores = [ {
             champions: false,
             atletico_madri: true,
             pontos: 0,
+            fluminense: false,
             perguntas: [["Já jogou no cruzeiro?","cruzeiro"]],
     },{
         nome : "Everton Cebolinha",
@@ -71,6 +74,7 @@ var jogadores = [ {
         champions: false,
         pontos:0,
         atletico_madri: true,
+        fluminense: false,
         perguntas: [["Já jogou no grêmio?","gremio"],["Já ganhou a libertadores por outro clube sem ser o Flamengo?","libertadores"]],
      },{
         nome : "Felipe Luis",
@@ -89,6 +93,7 @@ var jogadores = [ {
         champions: false,
         atletico_madri: true,
         pontos:0,
+        fluminense: false,
         perguntas: [["Já jogou copa do mundo?","copa_do_mundo"], ['já jogou no atlético de madrid?',"atletico_madri"]],
      },{
         nome : "David Luis",
@@ -107,6 +112,7 @@ var jogadores = [ {
         champions: true,
         atletico_madri: false,
         pontos:0,
+        fluminense: false,
         perguntas: [["Já jogou copa do mundo?","copa_do_mundo"], ['já foi campeão da champions league?',"champions"]],
      },
      {
@@ -126,6 +132,7 @@ var jogadores = [ {
         champions: true,
         atletico_madri: false,
         pontos:0,
+        fluminense: false,
         perguntas: [["É zagueiro ?",'zagueiro'], ["Já ganhou a olímpiadas?","olimpiadas"]],
      },{
         nome : "Pedro",
@@ -144,7 +151,8 @@ var jogadores = [ {
         champions: true,
         atletico_madri: false,
         pontos:0,
-        perguntas: [],
+        fluminense: true,
+        perguntas: [['Já jogou no Fluminense?', 'fluminense']],
      },{
         nome : "Arrascaeta",
         foto: "https://conteudo.imguol.com.br/c/esporte/30/2022/08/02/arrascaeta-comemora-gol-do-flamengo-sobre-o-corinthians-pela-libertadores-1659489351819_v2_3x4.jpg",
@@ -162,6 +170,7 @@ var jogadores = [ {
         champions: false,
         atletico_madri: false,
         pontos:0,
+        fluminense: false,
         perguntas: [["Já jogou no cruzeiro?","cruzeiro"]],
      }    
 ]
