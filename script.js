@@ -4,7 +4,9 @@ var cont2 = 0;
 var qt_especifica =0
 var pergunta = document.querySelector('.pergunta');
 window.onload = pergunta.innerHTML = perguntas_iniciais[cont][0];
-
+// Estou retomando o projeto depois de mais de 6 meses parados
+// Hoje é 26 de junho de 2022, eu vou terminar este projeto e
+// e mostrar para os meus amigos
 
 function resposta(resp){  // essa função é chamada quando o usuário escolhe uma resposta
     // o primeiro if tem dois propositos, primeiro: analisar a resposta da pergunta anterior; segundo: escrever
@@ -128,6 +130,9 @@ function ordena_por_nome(nome1, nome2){
     return nome1['nome'].localeCompare(nome2['nome']);
 }
 
+function analisa(resp, prop){
+    
+}
 
 function analisa(resp, prop){
     for (let i =0; i < jogadores.length; i++){
